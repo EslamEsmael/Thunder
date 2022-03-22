@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.thunder.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="com.example.thunder.ui.favourites.FavouritesFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_favourites">
+
+        <action
+            android:id="@+id/action_navigation_favourite_to_navigation_map"
+            app:destination="@id/navigation_maps_fragment" />
+
+        <action
+            android:id="@+id/action_navigation_favourite_to_place_details"
+            app:destination="@+id/navigation_place_details" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_place_details"
+        android:name="com.example.thunder.ui.favourites.PlaceDetailsFragment"
+        android:label="@string/place_details"
+        tools:layout="@layout/fragment_place_details"/>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.thunder.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_maps_fragment"
+        android:name="com.example.thunder.ui.favourites.MapsFragment"
+        android:label="@string/mapsFragment"
+        tools:layout="@layout/fragment_maps">
+
+        <action
+            android:id="@+id/action_navigation_map_to_navigation_favourite"
+            app:destination="@id/navigation_favourites"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation_favourites"
+
+           />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.thunder.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings2" />
+</navigation>

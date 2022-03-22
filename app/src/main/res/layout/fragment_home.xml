@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".ui.home.HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:elevation="80dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:elevation="80dp"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_ignoreDisabledSystemAnimations="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loadingblue"
+            app:tint="@color/background_color" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha=".5"
+            android:background="@color/white"
+            android:elevation="4dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/noDataAvailableRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:elevation="80dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loadingLottieAnimationView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:elevation="80dp"
+            app:lottie_autoPlay="true"
+            app:lottie_ignoreDisabledSystemAnimations="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/notavailable" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loadingLottieAnimationView"
+            android:layout_alignStart="@+id/loadingLottieAnimationView"
+            android:layout_alignEnd="@+id/loadingLottieAnimationView"
+            android:elevation="4dp"
+            android:text="@string/noDataAvailable"
+            android:textAlignment="center"
+            android:textColor="@color/background_color"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainViewConstrainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/cityNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/white"
+            android:elevation="4dp"
+            android:src="@drawable/ic_cloud2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/cityNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/cityNameTextView" />
+
+        <ImageView
+            android:id="@+id/moonCircleImageView"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/home_fragment_main_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="84dp"
+            android:alpha="1"
+            android:src="@drawable/ic_baseline_cloud_24"
+            app:layout_constraintEnd_toEndOf="@id/moonCircleImageView"
+            app:layout_constraintTop_toTopOf="@id/moonCircleImageView" />
+
+        <TextView
+            android:id="@+id/weatherStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/weather_status_text_circle"
+            android:paddingStart="24dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/cityNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/temperatureTextView" />
+
+        <ImageView
+            android:id="@+id/humidityIconImageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_humidity"
+            app:layout_constraintStart_toStartOf="@id/cityNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/weatherStatusTextView"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/humidityValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/humidityIconImageView"
+            app:layout_constraintStart_toEndOf="@id/humidityIconImageView"
+            app:layout_constraintTop_toTopOf="@id/humidityIconImageView" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/humidityIconImageView">
+
+            <ImageView
+                android:id="@+id/pressureIconImageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_info_svgrepo_com"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/pressureValueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="#728498"
+            android:src="@drawable/ic_wind_svgrepo_com"
+            app:layout_constraintEnd_toStartOf="@id/windSpeedTextView"
+            app:layout_constraintTop_toTopOf="@id/humidityIconImageView"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/windSpeedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/humidityIconImageView" />
+
+        <TextView
+            android:id="@+id/todayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/next24Hour"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/cityNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/humidityIconImageView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hourlyRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/todayTextView"
+            tools:listitem="@layout/item_hourly_recycler" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/daysRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hourlyRecyclerView"
+            tools:listitem="@layout/item_daily_recycler" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

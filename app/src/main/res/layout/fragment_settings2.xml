@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".ui.settings.SettingsFragment">
+
+    <LinearLayout
+        android:id="@+id/settingTopLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/weather_status_text_color"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/settingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/settings"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/settingTextView" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/languageTextView"
+        style="@style/settingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/language"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settingTopLinearLayout" />
+
+    <RadioGroup
+        android:id="@+id/languageRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/languageTextView">
+
+        <RadioButton
+            android:id="@+id/englishRadioButton"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:text="@string/english"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+        <RadioButton
+            android:id="@+id/arabicRadioButton"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@string/arabic"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/temperatureUnitTextView"
+        style="@style/settingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/temperature_unit"
+        app:layout_constraintStart_toStartOf="@id/languageTextView"
+        app:layout_constraintTop_toBottomOf="@id/languageRadioGroup" />
+
+
+    <RadioGroup
+        android:id="@+id/temperatureRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperatureUnitTextView">
+
+        <RadioButton
+            android:id="@+id/kRadioButton"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:text="@string/kelvin"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+        <RadioButton
+            android:id="@+id/cRadioButton"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@string/celsius"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+        <RadioButton
+            android:id="@+id/fRadioButton"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@string/fahrenheit"
+            android:textColor="@drawable/radio_flat_text_selector" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/windSpeedUnitTextView"
+        style="@style/settingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/wind_speed_unit"
+        app:layout_constraintStart_toStartOf="@id/languageTextView"
+        app:layout_constraintTop_toBottomOf="@id/temperatureRadioGroup" />
+
+    <RadioGroup
+        android:id="@+id/windSpeedRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/windSpeedUnitTextView">
+
+        <RadioButton
+            android:id="@+id/meterPerSecondRadioButton"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:text="@string/metre_sec"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+
+        <RadioButton
+            android:id="@+id/milePerHourRadioButton"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@string/mile_hour_full"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/notificationEnabledOrDisabledTextView"
+        style="@style/settingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/notification"
+        app:layout_constraintStart_toStartOf="@id/languageTextView"
+        app:layout_constraintTop_toBottomOf="@id/windSpeedRadioGroup" />
+
+    <RadioGroup
+        android:id="@+id/notificationsRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notificationEnabledOrDisabledTextView">
+
+        <RadioButton
+            android:id="@+id/enableNotificationRadioButton"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:text="@string/enable"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+
+        <RadioButton
+            android:id="@+id/disableNotificationRadioButton"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@string/disable"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/alertEnabledOrDisabledTextView"
+        style="@style/settingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/alert"
+        app:layout_constraintStart_toStartOf="@id/languageTextView"
+        app:layout_constraintTop_toBottomOf="@id/notificationsRadioGroup" />
+
+    <RadioGroup
+        android:id="@+id/alertRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/alertEnabledOrDisabledTextView">
+
+        <RadioButton
+            android:id="@+id/enableAlertRadioButton"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:text="@string/enable"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+        <RadioButton
+            android:id="@+id/disableAlertRadioButton"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:text="@string/disable"
+            android:textColor="@drawable/radio_flat_text_selector" />
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
