@@ -1,4 +1,4 @@
-# Foobar
+# Thunder
 
 Thunder is an android kotlin application for weather status and alarms for weather status using openWeatherApi.
 
