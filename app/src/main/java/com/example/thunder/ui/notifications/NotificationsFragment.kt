@@ -25,7 +25,6 @@ class NotificationsFragment : Fragment() {
 
     lateinit var alertAdapter: AlertAdapter
 
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -36,15 +35,16 @@ class NotificationsFragment : Fragment() {
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val addNewAlertFabBtn = binding.addNewAlert
-        addNewAlertFabBtn.setOnClickListener {
-
+        binding.addNewAlert.setOnClickListener {
             AddingNewAlertDialog().show(childFragmentManager, "NewAlertDialog")
         }
+
         alertAdapter = AlertAdapter(arrayListOf(), viewModel)
         initAlertsRecycler()
-        getAlertsFromViewModel()
 
+        viewModel.getAlerts().asLiveData().observe(viewLifecycleOwner) {
+            alertAdapter.changeData(it)
+        }
 
         return root
     }
@@ -69,13 +69,6 @@ class NotificationsFragment : Fragment() {
         val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
         itemTouchHelper.attachToRecyclerView(binding.alertsRecyclerView)
 
-    }
-
-
-    private fun getAlertsFromViewModel() {
-        viewModel.getAlerts().asLiveData().observe(viewLifecycleOwner) {
-            alertAdapter.changeData(it)
-        }
     }
 
     override fun onDestroyView() {

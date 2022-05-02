@@ -21,9 +21,6 @@ class AlertAdapter(
     private var alertViewModel = _alertViewModel
     lateinit var sharedPreferencesFactory: SharedPreferencesFactory
 
-
-
-
     class NotificationViewHolder(var view: ItemAlertBinding) :
         RecyclerView.ViewHolder(view.root)
 

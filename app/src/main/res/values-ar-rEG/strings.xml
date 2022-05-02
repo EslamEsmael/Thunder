@@ -1,17 +1,13 @@
 <resources>
     <string name="app_name">Thunder</string>
 
-    <string name="API_KEY">8fd4f4da8e0b8e17fd886d2075700106</string>
-    <string name="base_url">https://api.openweathermap.org/data/2.5/weather?</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">الرئيسية</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">الاشعارات</string>
     <string name="title_settings">الاعدادات</string>
     <string name="favourites">المفضلة</string>
-    <string name="search">بحث</string>
-    <string name="settings">الاعدادات:</string>
-    <string name="location">المكان</string>
+    <string name="settings">الاعدادات</string>
     <string name="language">اللغة</string>
     <string name="english">الانجليزية</string>
     <string name="arabic">العربية</string>
@@ -19,13 +15,12 @@
     <string name="wind_speed">سرعة الرياح</string>
     <string name="metre_sec">م/ث</string>
     <string name="mile_hour">ميل/س</string>
+    <string name="mile_hour_full">ميل/ساعة</string>
     <string name="enable">تشغيل</string>
     <string name="disable">ايقاف</string>
     <string name="kelvin">كيلفن</string>
     <string name="celsius">سيليزس</string>
     <string name="fahrenheit">فهرنهايت</string>
-    <string name="gps">جى بى اس</string>
-    <string name="map">خرائط</string>
     <string name="temperature">درجة الحرارة</string>
     <string name="saturday">السبت</string>
     <string name="sunday">الاحد</string>
@@ -35,14 +30,10 @@
     <string name="friday">الجمعة</string>
     <string name="thursday">الخميس</string>
     <string name="mapsFragment">الخرائط</string>
-    <string name="maps_api_key">AIzaSyDsKiA8n9-oohnEdlHvO2Hg4EQP9l_PtZw</string>
     <string name="next24Hour">ال24 ساعة القادمة</string>
-    <string name="wind_speed_unit">وحدة سرعة الرياح:</string>
-    <string name="temperature_unit">وحدة الحرارة:</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wind_speed_unit">وحدة سرعة الرياح</string>
+    <string name="temperature_unit">وحدة الحرارة</string>
     <string name="place_details">تفاصيل المكان</string>
-    <string name="passingWeatherResponse">passingWeatherResponse</string>
     <string name="noDataAvailable">"لا يوجد بيانات."</string>
     <string name="it_seem">يبدو</string>
     <string name="yes">نعم</string>
@@ -50,7 +41,6 @@
     <string name="some_details">التفاصيل</string>
     <string name="colon">فصلة</string>
     <string name="EnableNotiDialogContent">"هل تريد تفعيل التنبيهات ؟ "</string>
-    <string name="set_up_notifications">اعدادات التنبيهات</string>
     <string name="no_alert">لا يوجد تنبيهات</string>
     <string name="humidity">الرطوبة</string>
     <string name="close">اغلاق</string>

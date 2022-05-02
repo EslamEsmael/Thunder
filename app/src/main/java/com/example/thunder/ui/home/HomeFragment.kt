@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
 
     private var currentLon: Double = 0.0
     private var currentLat: Double = 0.0
-    lateinit var address: List<Address>
+//    lateinit var address: List<Address>
     lateinit var geocoder: Geocoder
     var currentCity: String = "City"
     lateinit var weatherResponse: WeatherResponse
@@ -119,9 +119,8 @@ class HomeFragment : Fragment() {
                     } else {
                         currentLat = it.latitude
                         currentLon = it.longitude
-                        //todo uncomment geoCoder
-                        address = geocoder.getFromLocation(currentLat, currentLon, 1)
-                        currentCity = address[0].subAdminArea
+                        //address = geocoder.getFromLocation(currentLat, currentLon, 1)
+                        //currentCity = address[0].subAdminArea
                         viewLifecycleOwner.lifecycleScope.launch {
                             weatherResponse =
                                 viewModel.makeRequest(currentLat, currentLon, currentCity)
@@ -145,9 +144,9 @@ class HomeFragment : Fragment() {
             viewModel.saveCurrentLocationWeatherResponse(weatherResponse)
         }
 
-        val address = geocoder.getFromLocation(weatherResponse.lat, weatherResponse.lon, 1)
+        //val address = geocoder.getFromLocation(weatherResponse.lat, weatherResponse.lon, 1)
         val converters = UnitsConverters(requireContext())
-        binding.cityNameTextView.text = address[0].subAdminArea
+        //binding.cityNameTextView.text = address[0].subAdminArea
 
         binding.temperatureTextView.text =
             converters.returnTemperatureUsingUserFormat(weatherResponse.current.temp.toString())

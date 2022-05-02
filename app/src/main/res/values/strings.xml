@@ -1,17 +1,13 @@
 <resources>
     <string name="app_name">Thunder</string>
 
-    <string name="API_KEY">8fd4f4da8e0b8e17fd886d2075700106</string>
-    <string name="base_url">https://api.openweathermap.org/data/2.5/weather?</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_settings">Settings</string>
     <string name="favourites">Favourites</string>
-    <string name="search">Search</string>
     <string name="settings">Settings</string>
-    <string name="location">Location</string>
     <string name="language">Language</string>
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
@@ -19,15 +15,12 @@
     <string name="wind_speed">Wind speed</string>
     <string name="metre_sec">meter/sec</string>
     <string name="mile_hour">mi/h</string>
-
-    <string name="mile_hour_full" translatable="false">mile/hour</string>
+    <string name="mile_hour_full">mile/hour</string>
     <string name="enable">Enable</string>
     <string name="disable">Disable</string>
     <string name="kelvin">Kelvin</string>
     <string name="celsius">Celsius</string>
     <string name="fahrenheit">Fahrenheit</string>
-    <string name="gps">GPS</string>
-    <string name="map">Map</string>
     <string name="temperature">Temperature</string>
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
@@ -37,13 +30,12 @@
     <string name="friday">Friday</string>
     <string name="thursday">Thursday</string>
     <string name="mapsFragment">Maps Fragment</string>
-    <string name="maps_api_key">AIzaSyDsKiA8n9-oohnEdlHvO2Hg4EQP9l_PtZw</string>
+    <string name="maps_api_key" translatable="false">AIzaSyBxUEcuX6KT-lQjp_SdGqZvSasXPkBg0IY</string>
     <string name="next24Hour">Next 24 Hour</string>
-    <string name="wind_speed_unit">Wind Speed Unit:</string>
-    <string name="temperature_unit">Temperature Unit:</string>
+    <string name="wind_speed_unit">Wind Speed Unit</string>
+    <string name="temperature_unit">Temperature Unit</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="place_details">Place Details</string>
-    <string name="passingWeatherResponse">passingWeatherResponse</string>
     <string name="noDataAvailable">"No available data."</string>
     <string name="it_seem">It seem weather will be </string>
     <string name="yes">Yes</string>
@@ -52,9 +44,7 @@
     <string name="EnableNotiDialogContent">Do you want  enable notification dialog to show you foses and refill over apps?</string>
     <string name="some_details">here some details of weather</string>
     <string name="colon">\u0020:\u0020</string>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="set_up_notifications">Set Up Notifications</string>
     <string name="no_alert">No Alert this time </string>
     <string name="humidity">Humidity</string>
-    <string name="alert">Alert</string>
+    <string name="alert">Alerts</string>
 </resources>

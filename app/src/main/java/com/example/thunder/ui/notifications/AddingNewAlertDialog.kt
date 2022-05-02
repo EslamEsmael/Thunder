@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
@@ -22,34 +23,32 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 @AndroidEntryPoint
-class AddingNewAlertDialog(
-
-) : DialogFragment(R.layout.fragment_adding_new_alert_dialog) {
+class AddingNewAlertDialog() : DialogFragment(R.layout.fragment_adding_new_alert_dialog) {
 
     private var _binding: FragmentAddingNewAlertDialogBinding? = null
-
     private val viewModel: AddingNewAlertDialogViewModel by viewModels()
-
     private val calendar = Calendar.getInstance()
-    lateinit var alert: AlertModel
 
+    lateinit var alert: AlertModel
 
     @SuppressLint("SimpleDateFormat")
     private val formatDate = SimpleDateFormat("MMM dd")
-
     @SuppressLint("SimpleDateFormat")
     private val formatHour = SimpleDateFormat("hh:mm aa")
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     private var isStartDateSelected = false
     private var isEndDateSelected = false
     private var isTimeSelected = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun onStart() {
+        super.onStart()
+        val width = (resources.displayMetrics.widthPixels * 0.85).toInt()
+        val height = (resources.displayMetrics.heightPixels * 0.40).toInt()
+        dialog!!.window?.setLayout(width, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog!!.window?.setBackgroundDrawableResource(R.drawable.shape_for_dialog)
     }
 
     override fun onCreateView(
@@ -58,11 +57,9 @@ class AddingNewAlertDialog(
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentAddingNewAlertDialogBinding.inflate(inflater, container, false)
+
         val root: View = binding.root
-
         alert = AlertModel(0, 0, 0, 0, true)
-
-
 
         view.apply {
             binding.dateFromTextView.text = formatDate.format(calendar.time)
@@ -80,7 +77,6 @@ class AddingNewAlertDialog(
                         }
 
                     }).showDatePicker()
-
             }
 
             binding.chooseToConstraintLayout.setOnClickListener {
@@ -92,7 +88,6 @@ class AddingNewAlertDialog(
                             isEndDateSelected = true
                             enableButtonWhenValid()
                         }
-
                     }).showDatePicker()
 
             }
@@ -107,22 +102,17 @@ class AddingNewAlertDialog(
                             enableButtonWhenValid()
                         }
                     }
-
                 }).showPicker()
             }
 
-
-
             binding.saveButton.setOnClickListener {
                 CoroutineScope(Dispatchers.Main).launch {
-
                     alert.id = viewModel.insertAlert(alert)
                 }.invokeOnCompletion {
                     var alertAlarm = AlertAlarmManager(context, alert)
                 }
                 it.isEnabled = false
                 dialog?.dismiss()
-
             }
         }
         return root
